@@ -1,0 +1,511 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url(images/bg-image.jpg);
+  background-size: cover;
+  background-position: center;
+  background-position: no-repeat;
+  display: flex;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background:linear-gradient(135deg, #090040 14%, #5B4A8A 56%, #B13BFF 88%);
+  backdrop-filter: blur(12px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1000;
+  padding: 25px;
+}
+
+.logo {
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 14px;
+  margin-bottom: 2rem;
+  padding: 25px;
+  color: #FFCC00;
+  word-wrap: break-word;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden
+}
+
+.logo::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(225, 225, 225, 0.1), transparent 70%);
+  animation: liquidMove 6s linear infinite;
+}
+
+@keyframes liquidMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(20px, -20px) rotate(180deg); }
+  100% { transform: translate(0,0) rotate(360deg); }
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu li {
+  margin: 10px 0px;
+  list-style: none;
+  width: 200px;
+  display: grid
+}
+
+.menu li a {
+  display: block;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #F2EDD7;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.menu img {
+  width: 25px;
+  height: 25px;
+}
+
+.menu li a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(5px);
+}
+
+.sidebar ul li a.active {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 20px;
+  margin-left: 260px;
+  margin-top: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  border-radius: 0;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+header h1 {
+  font-family: "yellowtail";
+  font-size: 50px;
+  color: #FFCC00;
+
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+  margin: 20px;
+  margin-bottom: 50px;
+}
+
+.summary-cards .card {
+  background: #F2EDD7;
+  border-radius: 30px;
+  padding: 20px;
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden
+}
+
+.summary-cards .card h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+}
+
+.summary-cards .card h4 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+}
+
+.summary-cards .card h5 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+}
+
+.summary-cards .card h6 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+}
+
+.summary-cards .card p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  opacity: 1;
+  width: 100%;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.card img {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  width: 70px;
+  height: 70px;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.chart-card {
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  position: relative;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.chart-container canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.charts h3 {
+  font-family: "Poppins", sans-serif;
+  color: whitesmoke;
+}
+
+/*Dropdown Filter Bulan*/
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-actions label {
+  font-size: 20px;
+  font-weight: 600;
+  color: whitesmoke;
+  white-space: nowrap;
+}
+
+.custom-select {
+  position: relative;
+  user-select: none;
+  font-size: 14px;
+}
+
+#kategori, #tipe {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 100%;
+  height: 43px;
+  padding: 11px 12px;
+  color: whitesmoke;
+}
+
+.custom-select .selected {
+  padding: 11px 12px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.custom-select .selected:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.custom-select .options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  margin-top: 5px;
+  max-height: 0;
+  overflow: auto;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.custom-select .options.open {
+  max-height: 300px;   /* tinggi maksimal saat terbuka */
+  opacity: 1;
+}
+
+.custom-select .options li {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.custom-select .options li:hover {
+  background: #f0f0f0;
+}
+
+#filterBulan {
+  width: 160px;
+}
+
+.options li {
+  font-family: "Poppins", sans-serif;
+  font-weight: light;
+  color: #090040;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dua kolom */
+  gap: 10px;
+  height: 335px;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  position: relative;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1; /* bikin item ini ambil satu baris penuh */
+}
+
+/* styling umum untuk input dan select */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+  margin: auto;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  color: whitesmoke;
+}
+
+/* warna placeholder */
+.form-group input::placeholder {
+  color: whitesmoke;
+  opacity: 0.75;
+}
+
+/* dropdown bawaan <select> */
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #FFCC00;
+}
+
+/* tombol tambah */
+.btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.flatpickr-calendar {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: whitesmoke;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.flatpickr-day {
+  color: whitesmoke;
+}
+
+.flatpickr-day:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+
+.flatpickr-day.selected {
+  background: #8e44ad;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+table th, table td {
+  padding: 12px 16px;
+  text-align: left;
+  color: whitesmoke;
+}
+
+table th {
+  background: rgba(255, 255, 255, 0.15);
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+table tr:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
+}
+
+.btn-hapus {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.3s ease;
+}
+
+.btn-hapus:hover {
+  background: #c62828;
+}
+
+.header-card h3 {
+  color: #FFCC00
+}

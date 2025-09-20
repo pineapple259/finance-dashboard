@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaksi</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <!-- CSS Utama -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">IAM<br>FT</div>
+    <nav>
+      <ul class="menu">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="transaction.html" class="active">Transaksi</a></li>
+        <li><a href="#">Goals</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <header class="header">
+      <h1>Transaksi</h1>
+    </header>
+
+    <!-- Form Input Transaksi -->
+    <form class="form-container" id="formTransaksi">
+      <div class="form-group">
+        <label for="tanggal">Tanggal</label>
+        <input type="text" id="tanggal" placeholder="Pilih tanggal">
+      </div>
+
+      <div class="form-group">
+        <label for="kategori">Kategori</label>
+        <div class="custom-select" id="category">
+          <div class="selected" id="kategori">Kategori ▾</div>
+          <ul class="options">
+            <li data-value="Makanan">Makanan</li>
+            <li data-value="Transportasi">Transportasi</li>
+            <li data-value="Hiburan">Hiburan</li>
+            <li data-value="Belanja">Belanja</li>
+            <li data-value="Lainnya">Lainnya</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="deskripsi">Deskripsi</label>
+        <input type="text" id="deskripsi" placeholder="Contoh: Beli nasi goreng" />
+      </div>
+
+      <div class="form-group">
+        <label for="jumlah">Jumlah (Rp)</label>
+        <input type="number" id="jumlah" />
+      </div>
+
+      <div class="form-group">
+        <label for="tipe">Tipe</label>
+        <div class="custom-select" id="type">
+          <div class="selected" id="tipe">Tipe ▾</div>
+          <ul class="options">
+            <li data-value="Pemasukan">Pemasukan</li>
+            <li data-value="Pengeluaran">Pengeluaran</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <button type="submit" class="btn">Tambah</button>
+      </div>
+    </form>
+
+    <!-- Card Tabel -->
+    <div class="card">
+      <div class="header-card">
+        <h3>Riwayat Transaksi</h3>
+      </div>
+      <table id="transactions-table">
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Kategori</th>
+            <th>Deskripsi</th>
+            <th>Jumlah</th>
+            <th>Tipe</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="tabelTransaksi">
+          <!-- Data dari JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/id.js"></script>
+  <script src="global.js"></script>
+  <script src="transactions.js"></script>
+</body>
+</html>

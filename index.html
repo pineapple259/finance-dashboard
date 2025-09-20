@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Keuangan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yellowtail&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">IAM<br>FT</div>
+    <nav>
+    <ul class="menu">
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="transaction.html">Transaksi <img src="images/transactions.png" alt="nav-1"> </a></li>
+      <li><a href="#">Goals</a></li>
+    </ul>
+    </nav>
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+  <header class="header">
+  <h1>Dashboard</h1>
+  <div class="header-actions">
+  <label for="filterBulan"></label>
+  <div class="custom-select" id="filterBulan">
+    <div class="selected">Semua ▾</div>
+    <ul class="options">
+      <li data-value="all">Semua</li>
+      <li data-value="01">Januari</li>
+      <li data-value="02">Februari</li>
+      <li data-value="03">Maret</li>
+      <li data-value="04">April</li>
+      <li data-value="05">Mei</li>
+      <li data-value="06">Juni</li>
+      <li data-value="07">Juli</li>
+      <li data-value="08">Agustus</li>
+      <li data-value="09">September</li>
+      <li data-value="10">Oktober</li>
+      <li data-value="11">November</li>
+      <li data-value="12">Desember</li>
+    </ul>
+    </div>
+  </div>
+  </header>
+    <section class="summary-cards">
+      <div class="card">
+          <h3>Saldo</h3>
+          <p id="total-balance">Rp 0</p>
+          <img src="images/balance.png" alt="icon-4">
+      </div>
+      <div class="card">
+        <h4>Pemasukan</h4>
+        <p id="total-income">Rp 0</p>
+        <img src="images/income.png" alt="icon-1">
+      </div>
+      <div class="card">
+        <h5>Pengeluaran</h5>
+        <p id="total-expense">Rp 0</p>
+        <img src="images/expense.png" alt="icon-2">
+      </div>
+      <div class="card">
+        <h6>Tabungan</h6>
+        <p>Rp 5000.000</p>
+        <img src="images/saving.png" alt="icon-3">
+      </div>
+    </section>
+
+    <section class="charts">
+      <div class="card chart-card">
+        <h3>Pengeluaran per Kategori</h3>
+        <div class="chart-container">
+        <canvas id="expenseChart"></canvas>
+        </div>
+      </div>
+      <div class="card chart-card">
+        <h3>Tren Pemasukan & Pengeluaran</h3>
+        <div class="chart-container">
+        <canvas id="incomeExpenseChart"></canvas>
+        </div>
+      </div>
+    </section>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <script src="global.js"></script>
+  <script src="dashboard.js"></script>
+  </body>
+</html>
